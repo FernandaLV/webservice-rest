@@ -9,6 +9,15 @@ public class Vehicle {
 	private Integer year;
 	private String color;
 	
+	public Vehicle(Integer id, String brand, String model, String plate, Integer year, String color) {
+		super();
+		this.id = id;
+		this.brand = brand;
+		this.model = model;
+		this.plate = plate;
+		this.year = year;
+		this.color = color;
+	}
 	public Integer getId() {
 		return id;
 	}

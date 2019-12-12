@@ -1,18 +1,33 @@
 package fiap.scj34.rest.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import fiap.scj34.rest.models.Vehicle;
 
+@RestController
+@RequestMapping("/vehicles")
 public class VehicleController {
 	
-	public List<Vehicle> getAllVehicle(){}
+	private static final List<Vehicle> LIST_VEHICLES = new ArrayList<Vehicle>();
+	static {
+		LIST_VEHICLES.add(new Vehicle(1, "Ford", "Mustang", "EJB-4575", 2018, "Vermelho"));
+	}
 	
-	public Vehicle getVehicleById(Integer id) {}
+	@GetMapping
+	public List<Vehicle> getAllVehicle(){
+		return LIST_VEHICLES;
+	}
 	
-	public void saveVehicle(Vehicle vehicle) {}
-	
-	public Vehicle updateVehicle(Integer id, Vehicle vehicle) {}
-	
-	public Vehicle deleteVehicle(Integer id) {}
+//	public Vehicle getVehicleById(Integer id) {}
+//	
+//	public void saveVehicle(Vehicle vehicle) {}
+//	
+//	public Vehicle updateVehicle(Integer id, Vehicle vehicle) {}
+//	
+//	public Vehicle deleteVehicle(Integer id) {}
 }
